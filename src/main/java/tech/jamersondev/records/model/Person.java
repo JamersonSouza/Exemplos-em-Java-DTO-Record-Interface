@@ -24,9 +24,10 @@ public class Person implements Serializable {
         this.cpf = cpf;
     }
 
-    public Person(String name, String cpf) {
+    public Person(String name, String cpf, int age) {
         this.name = name;
         this.cpf = cpf;
+        this.age = age;
     }
 
     public Person() {

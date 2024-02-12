@@ -7,10 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import tech.jamersondev.records.interfaces.IPerson;
 import tech.jamersondev.records.model.Person;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface PersonRepository extends JpaRepository<Person, UUID> {
 
     @Query(value = "select * from person_lesson", nativeQuery = true)
     Page<IPerson> findAllPersons(PageRequest pr, Class<IPerson> iPersonClass);
+
+    @Query("SELECT p.personUUID FROM Person p")
+    List<UUID> findAllPersons();
 }

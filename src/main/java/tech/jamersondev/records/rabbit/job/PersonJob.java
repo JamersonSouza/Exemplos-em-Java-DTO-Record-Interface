@@ -17,10 +17,10 @@ public class PersonJob {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PersonJob.class);
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 60000)
     public void execute(){
         LOGGER.info("Executando job...");
-        excluirPerson.messageProducerForRabbit("Flamengo vai ser campeão da Liberta 2024");
+        excluirPerson.messageProducerForRabbit();
     }
 
 }
